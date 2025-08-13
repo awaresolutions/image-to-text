@@ -13,7 +13,7 @@ uploaded_file = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
 if uploaded_file is not None:
     # Load image from uploaded file
     image = Image.open(uploaded_file)
-    st.image(image, caption="Uploaded Image", use_column_width=True)
+    st.image(image, caption="Uploaded Image", use_container_width=True)
 
     with st.spinner("Extracting text..."):
         # Convert image to text
@@ -30,4 +30,5 @@ if uploaded_file is not None:
         st.info("No text was extracted or an error occurred.")
 
 else:
+
     st.info("Please upload an image to get started.")
